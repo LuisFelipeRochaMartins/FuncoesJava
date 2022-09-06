@@ -36,4 +36,20 @@ public class Funcoes {
     public static float preco(float prod, float imposto){
         return(((prod*imposto)/100)+prod);
     }
+    public static int converter(int horas){
+        int h = horas;
+        if (horas>12) {
+            h = (horas - 12);
+        }
+        return(h);
+    }
+    public static String turno(int horas){
+        String periodo = "";
+        if(horas>=12){
+            periodo = "P.M.";
+        }else{
+            periodo = "A.M.";
+        }
+        return (periodo);
+    }
 }
