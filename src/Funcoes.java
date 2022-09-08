@@ -1,3 +1,4 @@
+import java.util.Random;
 public class Funcoes {
     public static String escada(int n) {
         String retorno="";
@@ -51,5 +52,52 @@ public class Funcoes {
             periodo = "A.M.";
         }
         return (periodo);
+    }
+    public static double valorPagamento(float valor, int dias){
+        double preco= 0;
+        float taxa = 0.1f;
+        if(dias>0){
+            preco = (dias*taxa)+(valor*0.03)+valor ;
+        }else{
+            preco=valor;
+        }
+        return(preco);
+    }
+    public static int contar(String number){
+        return (number.length());
+    }
+    public static String reverso(String x){
+        String reverso="";
+        char ch;
+        System.out.println("Palavra informada: "+x);
+
+        for (int i=0; i<x.length(); i++) {
+            ch= x.charAt(i);
+            reverso= ch+reverso;
+        }
+        return("Palavra ao contrário: "+ reverso);
+    }
+    public static String embaralha(String x){
+        Random random = new Random();
+        String[] letras = x.split("");
+        int pos;
+        for (int i=0;i<x.length();i++) {
+            pos = random.nextInt(0, x.length());
+            String temp = letras[i];
+            letras[i] = letras[pos];
+            letras[pos] = temp;
+        }
+        return String.join("",letras);
+    }
+    public static String extenso (String x){
+        String[] meses  = {"Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho",
+                "Agosto","Setembro","Outubro","Novembro","Dezembro"};
+
+        String dia = x.substring(0,2);
+        String mes = x.substring(3,5);
+        String ano = x.substring(6,10);
+
+        int k = Integer.parseInt(mes)-1;
+        return(dia+" de "+meses[k]+" de "+ano);
     }
 }
