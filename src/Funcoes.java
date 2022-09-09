@@ -100,4 +100,66 @@ public class Funcoes {
         int k = Integer.parseInt(mes)-1;
         return(dia+" de "+meses[k]+" de "+ano);
     }
+    public static int jogo(int n1,int n2){
+        if (n2 == 0 && n1 == 7 || n2 == 0 && n1 == 11) {
+            System.out.println("Natural");
+        }
+        else if (n2 == 0 && n1 == 2 || n2 == 0 && n1 == 3 || n2 == 0 && n1 == 12) {
+            System.out.println("Craps");
+        }
+        else if (n1 == 4 || n1 == 5 || n1 == 6 || n1 == 8 || n1 == 9 || n1 == 10) {
+            n2++;
+        }
+
+        if (n2 > 0 && n1 == 7) {
+            System.out.println("Perdeu");
+        }
+
+        return n2;
+
+    }
+    public static void quadrado (int n1, int n2){
+
+        for (int linha = 0; linha < n1; linha++)
+        {
+            if (linha == 0)
+            {
+                System.out.print("+");
+            }
+            else if (linha == n1 - 1)
+            {
+                System.out.println("+");
+            }
+            else
+            {
+                System.out.print("-");
+            }
+        }
+
+        for (int coluna = 0; coluna < n2; coluna++) {
+            if (coluna == 0) {
+                System.out.print("|");
+            }
+            else if (coluna == n2 - 1) {
+                System.out.println("|");
+            }
+            else {
+                System.out.print(" ");
+            }
+        }
+
+        for (int linha = 0; linha < n1; linha++)
+        {
+            if (linha == 0) {
+                System.out.print("+");
+            }
+            else if (linha == n1 - 1) {
+                System.out.println("+");
+            }
+            else {
+                System.out.print("-");
+            }
+        }
+
+    }
 }
